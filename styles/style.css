@@ -1,0 +1,36 @@
+/* reset css */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* border: 1px solid red; */
+}
+
+body{
+    background-color: #CDF5FD;
+}
+
+h2.heading{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    text-decoration: underline;
+    font-size: 45px;
+    font-weight: bolder;
+    margin: 30px 0px;
+    color: #2e2e73 ; 
+}
+
+footer{
+    background-color: #0e0e38;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    padding: 20px 10px 20px 10px;
+
+}
+
+.footer-Line{
+    font-weight: bold;
+    padding: 5px;
+}

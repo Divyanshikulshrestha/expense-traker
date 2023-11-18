@@ -1,0 +1,64 @@
+*{
+    /* border: 2px solid red; */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+.finance-topics{
+    display: flex;
+    width: 80vw;
+    /* max-width: px; */
+    margin: auto;
+   justify-content: space-around;
+   padding: 20px;
+   background-color: #89CFF3;
+    border-radius: 10px;
+    flex-wrap: wrap;
+}
+.topic{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    /* width: 450px; */
+    width: 30%;
+    /* height: 100px; */
+    padding: 20px;
+    box-shadow: 5px 5px 5px  grey;
+    background-color: #00A9FF;
+    border-radius: 10px;
+    min-width: 230px;
+    margin: 15px;
+}
+h2{
+    color:  #2e2e73;
+    font-weight: bold;
+    /* margin: 10px 0; */
+    margin-bottom: 10px;
+}
+
+p.point{
+    color: white;
+    font-weight: 200px;
+    font-size: 18px;
+}
+
+.finance-tips{
+   /* text-align: center; */
+   padding: 20px;
+   background-color: #89CFF3;
+   width: 80vw;
+   margin: 20px auto;
+   border-radius: 10px;
+   margin-bottom: 50px;
+
+}
+h2.tips{
+    color:  #2e2e73;
+    font-weight: bolder;
+    font-size: 30px;
+}
+ul{
+    font-size: 20px ;
+    padding: 0 20px;
+}

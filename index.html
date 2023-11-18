@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn2BudgetU</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/nav.css">
+    <link rel="stylesheet" href="./styles/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <nav class="navbar">
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fa-solid fa-bars"></i>
+        </label>
+        <label class="logo">Learn2BudgetU</label>
+        <ul class="navlist">
+            <li class="list-item-nav"><a class="active" href="./index.html">Home</a></li>
+            <li class="list-item-nav"><a href="./team.html">our team</a></li>
+            <li class="list-item-nav"><a href="./contact.html">contact us</a></li>
+            <li class="list-item-nav"><a  href="./tips.html">financial tips</a></li>
+        </ul>
+    </nav>
+    <section class="expense-tracker-section">
+        <h2 class="heading">
+            Expense Tracker
+        </h2>
+        <div class="expense-trackerBox">
+            <form id="expenseForm">
+                <label class="expense-tracker-form" for="expenseName">Expense Name:</label>
+                <input type="text" id="expenseName" required>
+        
+                <label class="expense-tracker-form" for="expenseAmount">Amount:</label>
+                <input type="number" id="expenseAmount" required>
+        
+                <input type="hidden" id="editIndex">
+        
+                <button class="add-expense" type="button" onclick="addOrUpdateExpense()">Add Expense</button>
+            </form>
+        
+            <h2>Expenses' List</h2>
+            <ul id="expenseList"></ul>
+        
+            <div class="totalExpenses">
+                <strong>Total Expenses:</strong>&nbsp;Rs.<span id="totalExpenses">0.00</span>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div>All the rights are reserved by @Learn2Budget.com</div>
+        <div class="footer-Line">Developed By Divyanshi with <i class="fa-solid fa-heart" style="color: #ff0000;"></i></div>
+    </footer>
+    <script src="./scripts/expenseTracker.js"></script>
+</body>
+</html>
