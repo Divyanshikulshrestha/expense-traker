@@ -34,3 +34,7 @@ footer{
     font-weight: bold;
     padding: 5px;
 }
+
+section{
+    min-height: 80vh;
+}
