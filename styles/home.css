@@ -1,14 +1,15 @@
-
 #expenseForm {
     display: flex;
     flex-direction: column;
     max-width: 100%;
 }
+
 #expenseList {
     margin-top: 20px;
     list-style: none;
     padding: 0;
 }
+
 .expense-item {
     display: flex;
     justify-content: space-between;
@@ -22,7 +23,6 @@
     box-shadow: 1px 1px 10px 1px #181831;
 }
 
-
 .delete-button,
 .edit-button {
     cursor: pointer;
@@ -31,15 +31,22 @@
     background: none;
     margin: 0 5px;
 }
+
 .delete-button {
     color: red;
 }
+
 .edit-button {
     color: blue;
 }
 
+.expense-date{
+    margin-right: 10px;
+    /* background-color: red; */
+}
+
 .expense-trackerBox{
-    width: 25vw;
+    width: 26vw;
     min-width: 300px;
     margin: auto;
     margin-bottom: 30px;
@@ -73,17 +80,15 @@ input{
     margin: 10px auto;
     border: 2px solid #181831;
 }
+
 .add-expense:hover{
     border: 3px solid #181831;
     box-shadow: 1px 1px 10px 1px #181831;
-
 }
 
 .expense-name{
     font-weight: bold;
 }
-
-
 
 .totalExpenses{
     margin: 10px 0;

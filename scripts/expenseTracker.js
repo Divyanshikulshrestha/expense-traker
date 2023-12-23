@@ -1,6 +1,7 @@
 
 // Function to add or update an expense
 function addOrUpdateExpense() {
+    var date = document.getElementById("expenseDate").value;
     var name = document.getElementById("expenseName").value;
     var amount = document.getElementById("expenseAmount").value;
     var editIndex = document.getElementById("editIndex").value;
@@ -13,6 +14,7 @@ function addOrUpdateExpense() {
 
     // Create expense object
     var expense = {
+        date: date,
         name: name,
         amount: parseFloat(amount)
     };
@@ -80,13 +82,14 @@ function updateExpenseList() {
         var listItem = document.createElement("li");
         listItem.className = "expense-item";
         listItem.innerHTML = `
-            <span><span class="expense-name">${expense.name}:</span> Rs.${expense.amount.toFixed(2)}</span>
+            <span><span class="expense-date">${expense.date}</span> <span class="expense-name"> ${expense.name}:</span> Rs.${expense.amount.toFixed(2)}</span>
             <span><button class="edit-button" onclick="editExpense(${index})">Edit</button>
             <button class="delete-button" onclick="deleteExpense(${index})">Delete</button><span>
         `;
         expenseList.appendChild(listItem);
     });
 }
+
 
 // Function to update the total expenses and income
 function updateTotals() {
@@ -97,11 +100,39 @@ function updateTotals() {
         return acc + expense.amount;
     }, 0);
 
-
-    // Update the total expenses and income display
+    // Update the total expenses display
     document.getElementById("totalExpenses").textContent = totalExpenses.toFixed(2);
+
+    // Check if monthly expenses exceed 5000 Rs
+    var currentDate = new Date();
+    var currentMonth = currentDate.getMonth() + 1; // Months are zero-indexed
+
+    var monthlyExpenses = expenses.reduce(function(acc, expense) {
+        var expenseDate = new Date(expense.date);
+        var expenseMonth = expenseDate.getMonth() + 1;
+
+        if (currentMonth === expenseMonth) {
+            return acc + expense.amount;
+        } else {
+            return acc;
+        }
+    }, 0);
+
+    // Generate alert if monthly expenses exceed 5000 Rs
+    if (monthlyExpenses > 5000) {
+        alert("Warning: Monthly expenses exceed 5000 Rs!");
+    }
 }
 
 // Initial update when the page loads
 updateExpenseList();
 updateTotals();
+
+
+// Initial update when the page loads
+updateExpenseList();
+updateTotals();
+
+
+
+
