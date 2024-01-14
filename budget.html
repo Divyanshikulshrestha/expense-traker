@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,11 +17,11 @@
         </label>
         <label class="logo">Learn2BudgetU</label>
         <ul class="navlist">
-            <li class="list-item-nav"><a class="active" href="./index.html">Home</a></li>
+            <li class="list-item-nav"><a href="./index.html">Home</a></li>
             <li class="list-item-nav"><a href="./team.html">our team</a></li>
             <li class="list-item-nav"><a href="./contact.html">contact us</a></li>
-            <li class="list-item-nav"><a  href="./tips.html">financial tips</a></li>
-            <li class="list-item-nav"><a href="./budget.html">budget</a></li>
+            <li class="list-item-nav"><a href="./tips.html">financial tips</a></li>
+            <li class="list-item-nav"><a class="active" href="./budget.html">budget</a></li>
         </ul>
     </nav>
     <section class="expense-tracker-section">
@@ -29,27 +29,26 @@
             Expense Tracker
         </h2>
         <div class="expense-trackerBox">
-            <form id="expenseForm">
-                <label class="expense-tracker-form" for="expenseDate">Expense Date:</label>
-                <input type="date" id="expenseDate" required>
+            <form id="expenseLimitForm">
+                <label for="budget">Enter Maximum Budget:</label>
+                <input type="number" id="budget" placeholder="Enter budget">
 
-                <label class="expense-tracker-form" for="expenseName">Expense Name:</label>
-                <input type="text" id="expenseName" required>
-        
-                <label class="expense-tracker-form" for="expenseAmount">Amount:</label>
-                <input type="number" id="expenseAmount" required>
-        
-                <input type="hidden" id="editIndex">
-        
-                <button class="add-expense" type="button" onclick="addOrUpdateExpense()">Add Expense</button>
+                <button class="add-expense" type="button" onclick="setLimit()">Set Budget</button>
+
+                <p id="result"></p>
             </form>
-        
-            <h2>Expenses' List</h2>
-            <ul id="expenseList"></ul>
-        
-            <div class="totalExpenses">
-                <strong>Total Expenses:</strong>&nbsp;Rs.<span id="totalExpenses">0.00</span>
-            </div>
+            <form id="expensedateForm">
+            
+                <label for="startDate">Start Date:</label>
+                <input type="date" id="startDate">
+            
+                <label for="endDate">End Date:</label>
+                <input type="date" id="endDate">
+            
+                <button class="add-expense" type="button" onclick="setDate()">Set Budget</button>
+            
+                <p id="result"></p>
+            </form>
         </div>
     </section>
     <footer>
@@ -59,3 +58,6 @@
     <script src="./scripts/expenseTracker.js"></script>
 </body>
 </html>
+
+
+

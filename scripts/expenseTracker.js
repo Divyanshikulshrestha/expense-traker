@@ -1,4 +1,4 @@
-
+var maxLimit = 5000;
 // Function to add or update an expense
 function addOrUpdateExpense() {
     var date = document.getElementById("expenseDate").value;
@@ -26,7 +26,7 @@ function addOrUpdateExpense() {
         // Add new expense to the list
         expenses.push(expense);
     } else {
-        // Update existing expense
+        // Update existing expenses
         expenses[editIndex] = expense;
     }
 
@@ -119,9 +119,14 @@ function updateTotals() {
     }, 0);
 
     // Generate alert if monthly expenses exceed 5000 Rs
-    if (monthlyExpenses > 5000) {
+    if (monthlyExpenses > maxLimit) {
         alert("Warning: Monthly expenses exceed 5000 Rs!");
     }
+}
+
+function setLimit(){
+    var newLimit = document.getElementById("budget").value;
+    maxLimit = newLimit;
 }
 
 // Initial update when the page loads
