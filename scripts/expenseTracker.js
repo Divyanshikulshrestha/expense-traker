@@ -1,4 +1,13 @@
-var maxLimit = 5000;
+let localMaxLimit = localStorage.getItem('maxLimit');
+if(localMaxLimit == null){
+    localMaxLimit = 5000;
+    localStorage.setItem('maxLimit', 5000);
+    document.getElementById.value = 5000;
+}else{
+    console.log(localMaxLimit);
+    document.getElementById('budget').value = localMaxLimit;
+}
+
 // Function to add or update an expense
 function addOrUpdateExpense() {
     var date = document.getElementById("expenseDate").value;
@@ -119,14 +128,16 @@ function updateTotals() {
     }, 0);
 
     // Generate alert if monthly expenses exceed 5000 Rs
-    if (monthlyExpenses > maxLimit) {
-        alert("Warning: Monthly expenses exceed 5000 Rs!");
+    if (monthlyExpenses > localStorage.getItem('maxLimit')) {
+        let maxLimit = localStorage.getItem('maxLimit');
+        alert(`Warning: Monthly expenses exceed ${maxLimit} Rs!`);
     }
 }
 
 function setLimit(){
     var newLimit = document.getElementById("budget").value;
-    maxLimit = newLimit;
+    localStorage.setItem('maxLimit', newLimit);
+
 }
 
 // Initial update when the page loads
@@ -137,7 +148,3 @@ updateTotals();
 // Initial update when the page loads
 updateExpenseList();
 updateTotals();
-
-
-
-
